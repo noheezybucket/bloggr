@@ -27,6 +27,15 @@ Route::put('/update-post-process/{id}', [PostController::class, 'update_process'
 Route::get('/delete-post/{id}', [PostController::class, 'delete'])->name('delete-post');
 Route::delete('/delete-post-process/{id}', [PostController::class, 'destroy'])->name('delete-post-process');
 
+// CATEGORIE
 Route::get('/categories', [CategoryController::class, 'index'])->name('all-categories');
+
 Route::get('/create-category', [CategoryController::class, 'create'])->name('create-category');
 Route::post('/create-category-process', [CategoryController::class, 'store'])->name('create-category-process');
+
+
+Route::get('/update-category/{id}', [CategoryController::class, 'update'])->name('update-category');
+Route::put('/update-category-process/{id}', [CategoryController::class, 'update_process'])->name('update-category-process');
+
+Route::get('/delete-category/{id}', [CategoryController::class, 'delete'])->name('delete-category');
+Route::delete('/delete-category-process/{id}', [CategoryController::class, 'destroy'])->name('delete-category-process');

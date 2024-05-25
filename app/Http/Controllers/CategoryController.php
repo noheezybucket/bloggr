@@ -29,11 +29,38 @@ class CategoryController extends Controller
         return redirect(route('create-category'))->with('status', 'Category created successfully');
     }
 
-    public function update()
+    public function update($id)
     {
+        $category = Category::find($id);
+        return view('categories.update', compact("category"));
     }
 
-    public function destroy()
+    public function update_process(Request $request, $id)
     {
+        $request->validate([
+            'category_name' => 'required',
+        ]);
+
+        $category = Category::find($id);
+
+        $category->update($request->all());
+
+        return redirect(route('update-category', ['id' => $id]))->with('status', 'Category updated successfully');
+    }
+
+    public function delete($id)
+    {
+        $category = Category::find($id);
+
+        return view('categories/delete', compact('category'));
+    }
+
+    public function destroy($id)
+    {
+        $Category = Category::find($id);
+
+        $Category->delete();
+
+        return redirect(route('all-categories'))->with('status', 'Category deleted successfully');
     }
 }
