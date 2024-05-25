@@ -13,6 +13,12 @@ class PostController extends Controller
         return view("posts.index", compact('posts'));
     }
 
+    public function unique_post($id)
+    {
+        $post = Post::find($id);
+        return view("posts.unique", compact('post'));
+    }
+
     public function create()
     {
         return view('posts.create');
@@ -30,17 +36,39 @@ class PostController extends Controller
         return redirect(route('create-post'))->with('status', 'Post created successfully');
     }
 
-    public function update()
+    public function update($id)
     {
-        return view('posts.update');
+        $post = Post::find($id);
+        return view('posts.update', compact("post"));
     }
 
     public function update_process(Request $request, $id)
     {
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+
+        $post = Post::find($id);
+
+        $post->update($request->all());
+
+        return redirect(route('update-post', ['id' => $id]))->with('status', 'Post updated successfully');
+    }
+
+    public function delete($id)
+    {
+        $post = Post::find($id);
+
+        return view('posts/delete', compact('post'));
     }
 
     public function destroy($id)
     {
-        return view('posts.delete');
+        $post = Post::find($id);
+
+        $post->delete();
+
+        return redirect(route('all-posts'))->with('status', 'Post deleted successfully');
     }
 }

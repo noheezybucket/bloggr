@@ -19,8 +19,13 @@ Route::get('/', [PostController::class, 'index'])->name('all-posts');
 Route::get('/create-post', [PostController::class, 'create'])->name('create-post');
 Route::post('/create-post-process', [PostController::class, 'store'])->name('create-post-process');
 
-Route::get('/', [PostController::class, 'index'])->name('all-posts');
-Route::get('/', [PostController::class, 'index'])->name('all-posts');
+Route::get('/post/{id}', [PostController::class, 'unique_post'])->name('unique-post');
+
+Route::get('/update-post/{id}', [PostController::class, 'update'])->name('update-post');
+Route::put('/update-post-process/{id}', [PostController::class, 'update_process'])->name('update-post-process');
+
+Route::get('/delete-post/{id}', [PostController::class, 'delete'])->name('delete-post');
+Route::delete('/delete-post-process/{id}', [PostController::class, 'destroy'])->name('delete-post-process');
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('all-categories');
 Route::get('/create-category', [CategoryController::class, 'create'])->name('create-category');

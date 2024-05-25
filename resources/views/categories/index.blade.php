@@ -26,8 +26,10 @@
                         {{ $category->category_name }}
                     </td>
                     <td>
-                        <a class="bg-yellow-400 text-white p-2 rounded-lg">Update</a>
-                        <a class="bg-red-600 text-white p-2 rounded-lg">Delete</a>
+                        <a href="{{ route('unique-post', ['id' => $category->id]) }}"
+                            class="bg-yellow-400 text-white p-2 rounded-lg">Update</a>
+                        <a href="{{ route('unique-post', ['id' => $category->id]) }}"
+                            class="bg-red-600 text-white p-2 rounded-lg">Delete</a>
 
                     </td>
                 </tr>
