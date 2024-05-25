@@ -11,3 +11,40 @@
 .centered-margin {
     @apply w-9/12 mx-auto;
 }
+
+.title {
+    @apply font-bold text-2xl;
+}
+
+.btn-primary {
+    @apply border border-primary text-primary rounded-lg px-3 py-2;
+}
+
+.btn-form {
+    @apply border border-white text-white rounded-lg px-3 py-2 w-full hover:bg-white hover:text-primary;
+}
+
+.blog-title {
+    @apply font-bold text-xl;
+}
+
+form {
+    @apply space-y-3 w-9/12 mx-auto;
+}
+
+input,
+select {
+    @apply border rounded-lg h-10 p-2 w-full outline-none;
+}
+
+textarea {
+    @apply border rounded-lg p-2 outline-none;
+}
+
+.error {
+    @apply bg-red-200 border border-red-600 text-red-600 rounded-2xl p-2;
+}
+
+.success {
+    @apply bg-green-200 border border-green-600 text-green-600 rounded-2xl p-2;
+}
