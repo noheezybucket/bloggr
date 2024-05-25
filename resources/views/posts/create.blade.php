@@ -18,10 +18,11 @@
                 @csrf
 
                 <input type="text" name="title" placeholder="Post title here">
-                <select type="text" name="category">
-                    <option value="">Title first</option>
-                    <option value="">Second first</option>
-                    <option value="">Third first</option>
+                <select type="text" name="category_id">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                    @endforeach
+
                 </select>
 
                 <textarea name="content" cols="30" rows="10" class="w-full"></textarea>

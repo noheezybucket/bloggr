@@ -16,6 +16,10 @@ return new class extends Migration
             $table->string("title");
             $table->text("content");
             $table->timestamps();
+            $table->foreignId('category_id')->constrained(
+                table: 'categories',
+                indexName: 'id'
+            )->onUpdate('cascade')->onDelete(null);
         });
     }
 

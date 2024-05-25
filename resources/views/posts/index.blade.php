@@ -19,13 +19,17 @@
         @endif
         <div class="grid grid-cols-3 gap-5">
             @foreach ($posts as $post)
-                <div class="border rounded-lg p-2 shadow-md  space-y-3 bg-primary text-white">
+                <div class="border rounded-lg p-2 shadow-md  space-y-2 bg-primary text-white">
                     {{-- <img src="{{ asset('assets/default.jpg') }}" alt="" class=" w-full object-cover"> --}}
                     <h2 class="blog-title">{{ $post->title }}</h2>
                     <p class="text-justify">{{ $post->content }}²</p>
-                    <div class="flex justify-between">
-                        <span>{{ $post->created_at }}</span>
-                        <span class="font-bold">noheezybucket</span>
+                    <span>{{ $post->created_at }}</span>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold mr-1 flex items-center gap-2">
+                            <span class="h-2 w-2 bg-white inline-block rounded-full"></span>
+                            {{ $post->category->category_name }}
+                        </span>
+                        <span class="font-bold inline-block">noheezybucket</span>
                     </div>
                     <a href="{{ route('unique-post', ['id' => $post->id]) }}" class="btn-form block">Read the post...</a>
                 </div>
