@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,9 @@ Route::put('/update-post-process/{id}', [PostController::class, 'update_process'
 Route::get('/delete-post/{id}', [PostController::class, 'delete'])->name('delete-post');
 Route::delete('/delete-post-process/{id}', [PostController::class, 'destroy'])->name('delete-post-process');
 
+Route::get('/search-post', [PostController::class, 'search'])->name('search-post');
+
+
 // CATEGORIE
 Route::get('/categories', [CategoryController::class, 'index'])->name('all-categories');
 
@@ -39,3 +43,5 @@ Route::put('/update-category-process/{id}', [CategoryController::class, 'update_
 
 Route::get('/delete-category/{id}', [CategoryController::class, 'delete'])->name('delete-category');
 Route::delete('/delete-category-process/{id}', [CategoryController::class, 'destroy'])->name('delete-category-process');
+
+Route::get('/search-category', [CategoryController::class, 'search'])->name('search-category');

@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::paginate(4);
         return view("categories.index", compact('categories'));
     }
 
@@ -62,5 +62,15 @@ class CategoryController extends Controller
         $Category->delete();
 
         return redirect(route('all-categories'))->with('status', 'Category deleted successfully');
+    }
+
+
+    public function search(Request $request)
+    {
+        $search = $request['search'];
+        $categories = Category::where('category_name', 'like', "%$search%")->get();
+
+
+        return view('categories.search', compact('categories'));
     }
 }

@@ -7,7 +7,7 @@
             <h1 class="title">All Categories</h1>
             <form action="{{ route('search-category') }}" method="GET" class="flex gap-2 w-1/2">
                 @csrf
-                <input type="text" name="search" placeholder="Search for a category">
+                <input type="text" name="search" placeholder="Search for a post">
                 <button type="submit" class="btn-primary">
                     Search
                 </button>
@@ -46,7 +46,5 @@
         </div>
 
     </div>
-    <div class="centered-margin pt-5">
-        {{ $categories->links() }}
-    </div>
+
 @endsection

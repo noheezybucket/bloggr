@@ -5,7 +5,7 @@
     <div class="centered-margin space-y-5 mb-10">
         <div class="flex justify-between">
             <h1 class="title">Create post</h1>
-            <a href="{{ route('create-post') }}" class="btn-primary">Back to posts</a>
+            <a href="{{ route('all-posts') }}" class="btn-primary">Back to posts</a>
         </div>
         @if (session('status'))
             <div class="success">{{ session('status') }}</div>

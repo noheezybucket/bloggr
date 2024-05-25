@@ -11,7 +11,7 @@
 
 <body>
     <header
-        class="flex gap-4 justify-between items-center centered-margin py-5 border mt-2 mb-10 rounded-lg px-2 bg-primary text-white">
+        class="flex gap-4 justify-between items-center centered-margin py-5 border mt-2 mb-5 rounded-lg px-2 bg-primary text-white">
         <div class="flex items-center">
             {{-- <svg class="w-6 h-6 text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                 height="24" fill="none" viewBox="0 0 24 24">

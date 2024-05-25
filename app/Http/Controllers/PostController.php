@@ -71,4 +71,13 @@ class PostController extends Controller
 
         return redirect(route('all-posts'))->with('status', 'Post deleted successfully');
     }
+
+    public function search(Request $request)
+    {
+        $search = $request['search'];
+        $posts = Post::where('title', 'like', "%$search%")->get();
+
+
+        return view('posts.search', compact('posts'));
+    }
 }
