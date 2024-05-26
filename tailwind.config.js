@@ -12,6 +12,9 @@ export default {
                 secondary: "#fff",
                 tertiary: "#0C0910",
             },
+            backgroundImage: {
+                blog: "url('./public/assets/blog.jpg')",
+            },
         },
     },
     plugins: [],

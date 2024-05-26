@@ -23,7 +23,7 @@
                     class="border rounded-lg p-2 shadow-md  space-y-2 bg-primary text-white {{ $post->id === 2 || $post->id === 6 ? 'col-span-2' : '' }}">
                     {{-- <img src="{{ asset('assets/default.jpg') }}" alt="" class=" w-full object-cover"> --}}
                     <h2 class="blog-title">{{ $post->title }}</h2>
-                    <p class="text-justify">{{ $post->content }}²</p>
+                    <p class="text-justify">{{ Str::limit($post->content, 40, '...') }}</p>
                     <span>{{ $post->created_at }}</span>
                     <div class="flex justify-between items-center">
                         <span class="font-bold mr-1 flex items-center gap-2">
