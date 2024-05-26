@@ -17,9 +17,10 @@
         @if (session('status'))
             <div class="success">{{ session('status') }}</div>
         @endif
-        <div class="grid grid-cols-3 gap-5">
+        <div class="grid auto-rows-[192px]  grid-cols-3 gap-5">
             @foreach ($posts as $post)
-                <div class="border rounded-lg p-2 shadow-md  space-y-2 bg-primary text-white">
+                <div
+                    class="border rounded-lg p-2 shadow-md  space-y-2 bg-primary text-white {{ $post->id === 2 || $post->id === 6 ? 'col-span-2' : '' }}">
                     {{-- <img src="{{ asset('assets/default.jpg') }}" alt="" class=" w-full object-cover"> --}}
                     <h2 class="blog-title">{{ $post->title }}</h2>
                     <p class="text-justify">{{ $post->content }}²</p>
